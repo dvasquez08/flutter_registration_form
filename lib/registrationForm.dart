@@ -30,15 +30,24 @@ class _registrationFormState extends State<registrationForm> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: (secondaryColor),
+        
+        // Section where the app bar is styled
+        
         appBar: AppBar(
           backgroundColor: (primaryColor),
           title: sansText("Registration Form", 20.0),
           centerTitle: true,
         ),
+        
+        // End of app bar section
+        
         body: Center(
           child: ListView(
             children: [
               SizedBox(height: 20.0),
+              
+              // Beginning of top section that shows contact info
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -66,6 +75,11 @@ class _registrationFormState extends State<registrationForm> {
                 ],
               ),
               SizedBox(height: 50.0),
+              
+              // End of top section
+
+              // Beginning of the logo and title text section above the forms
+              
               Form(
                 key: formKey,
                 child: Column(
@@ -95,6 +109,12 @@ class _registrationFormState extends State<registrationForm> {
                       ),
                     ),
                     SizedBox(height: 30.0),
+                    
+                    // End of top logo and title section
+                    
+                    // Beginning of form entry section
+                    //top row
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -131,6 +151,9 @@ class _registrationFormState extends State<registrationForm> {
                       ],
                     ),
                     SizedBox(height: 20.0),
+                    
+                    // Second row
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -158,6 +181,9 @@ class _registrationFormState extends State<registrationForm> {
                       ],
                     ),
                     SizedBox(height: 20.0),
+                    
+                    // Third and last row
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -184,6 +210,9 @@ class _registrationFormState extends State<registrationForm> {
                             controller: _postalCodeController),
                       ],
                     ),
+                    
+                    // End of form entry section
+                 
                     SizedBox(height: 15.0),
                     Column(
                       children: [
@@ -194,6 +223,13 @@ class _registrationFormState extends State<registrationForm> {
                       ],
                     ),
                     SizedBox(height: 20.0),
+                    
+                      // Beginning section for the submit button. This is where
+                      // the button is styled and also where it shows the Map
+                      // which is used to save all the data from the text
+                      // controllers when the button is pressed, then sends the
+                      // data to the Firestore collection called 'registrations'
+                    
                     MaterialButton(
                       elevation: 20.0,
                       shape: RoundedRectangleBorder(
@@ -224,9 +260,13 @@ class _registrationFormState extends State<registrationForm> {
                       },
                       child: sansText("Submit", 15.0),
                     ),
+                    
+                    // End of button section
+                    
                   ],
                 ),
               ),
+              // This was added for some extra space at the very bottom
               SizedBox(height: 20.0)
             ],
           ),
